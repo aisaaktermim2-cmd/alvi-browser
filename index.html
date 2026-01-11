@@ -2,45 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ALVI HACKER OS 3.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiwi Browser - Alvi Edition</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="hacker-frame">
-        <header>
-            <div class="os-title">ALVI HACKER OS 3.0</div>
-            <div class="system-status">DEEPSCAN: <span class="active">ACTIVE</span></div>
-        </header>
-
-        <div class="address-bar">
-            <input type="text" id="target-url" placeholder=">> TARGET_URL: TKCLUB2.COM">
-            <button onclick="initiateSniff()">INITIATE SNIFF</button>
+    <div class="browser-ui">
+        <div class="top-bar">
+            <span class="home-btn" onclick="goHome()">🏠</span>
+            <div class="search-container">
+                <input type="text" id="addressBar" value="Search or type web address">
+            </div>
+            <span class="tab-count">4</span>
+            <span class="menu-btn" onclick="toggleMenu()">⋮</span>
         </div>
 
-        <main>
-            <iframe id="browser-view" src="about:blank"></iframe>
-        </main>
+        <div id="kiwiMenu" class="dropdown-menu">
+            <div class="menu-item">⭐ Bookmarks</div>
+            <div class="menu-item">⬇️ Downloads</div>
+            <div class="menu-item" onclick="openDevTools()">🛠️ Developer tools</div>
+            <div class="menu-item">🧩 Extensions</div>
+            <hr>
+            <div class="menu-item">💻 Desktop site <input type="checkbox"></div>
+            <div class="menu-item">⚙️ Settings</div>
+        </div>
 
-        <div class="dev-panel">
-            <div class="panel-header">
-                <span class="tab active">NETWORK.LOG</span>
-                <span class="tab">CONSOLE.EXE</span>
-                <span class="tab alvi-mode">// ALVI MODE //</span>
+        <div class="content-area" id="contentArea">
+            <div id="homeScreen" class="home-grid">
+                <div class="icon-card"><div class="circle">H</div>Welcome</div>
+                <div class="icon-card"><div class="circle" style="background:red">HGZY</div>HGZY</div>
+                <div class="icon-card"><div class="circle" style="background:#4267B2">f</div>Facebook</div>
+                <div class="icon-card"><div class="circle" style="background:#FF0000">y</div>YouTube</div>
             </div>
-            <div class="log-container">
-                <div id="sniff-status">>> INITIATING DEEPSCAN FOR_EMERD_DATA...</div>
-                <table id="network-table">
-                    <thead>
-                        <tr>
-                            <th>TIME</th>
-                            <th>TARGET API</th>
-                            <th>STATUS</th>
-                            <th>RESULT</th>
-                        </tr>
-                    </thead>
-                    <tbody id="api-rows">
-                        </tbody>
+            <iframe id="mainFrame" src="" style="display:none;"></iframe>
+        </div>
+
+        <div id="devToolsPanel" class="devtools-bottom">
+            <div class="dt-header">
+                <span>Elements</span><span class="active">Network</span><span>Console</span>
+                <button onclick="closeDevTools()">✖</button>
+            </div>
+            <div class="dt-content">
+                <table id="networkTable">
+                    <thead><tr><th>Name</th><th>Status</th><th>Type</th><th>Time</th></tr></thead>
+                    <tbody id="networkLogs"></tbody>
                 </table>
+                <div id="emptyMsg">Recording network activity...</div>
             </div>
         </div>
     </div>
