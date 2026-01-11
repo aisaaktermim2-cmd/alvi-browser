@@ -1,0 +1,20 @@
+:root { --neon-green: #00ff41; --dark-bg: #0a0a0a; --terminal-line: #003b00; }
+body { background: black; color: var(--neon-green); font-family: 'Courier New', monospace; margin: 0; overflow: hidden; }
+.hacker-frame { border: 2px solid var(--neon-green); height: 100vh; display: flex; flex-direction: column; box-shadow: inset 0 0 20px var(--neon-green); }
+header { display: flex; justify-content: space-between; padding: 10px; border-bottom: 1px solid var(--neon-green); font-weight: bold; }
+.active { animation: blink 1s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.address-bar { padding: 10px; display: flex; gap: 10px; background: #111; }
+#target-url { flex: 1; background: transparent; border: 1px solid var(--neon-green); color: var(--neon-green); padding: 8px; outline: none; }
+button { background: var(--neon-green); color: black; border: none; padding: 8px 20px; font-weight: bold; cursor: pointer; }
+main { flex: 1; background: white; }
+#browser-view { width: 100%; height: 100%; border: none; }
+.dev-panel { height: 40%; background: var(--dark-bg); border-top: 2px solid var(--neon-green); }
+.panel-header { display: flex; border-bottom: 1px solid var(--terminal-line); }
+.tab { padding: 10px 20px; cursor: pointer; border-right: 1px solid var(--terminal-line); font-size: 12px; }
+.tab.active { background: var(--neon-green); color: black; }
+.alvi-mode { color: #ff00ff; margin-left: auto; border-left: 1px solid var(--terminal-line); }
+.log-container { padding: 10px; font-size: 11px; }
+#network-table { width: 100%; margin-top: 10px; text-align: left; }
+#network-table th { color: #888; border-bottom: 1px solid var(--terminal-line); }
+.success { color: white; background: #005500; padding: 2px 5px; }

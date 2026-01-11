@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ALVI HACKER OS 3.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hacker-frame">
+        <header>
+            <div class="os-title">ALVI HACKER OS 3.0</div>
+            <div class="system-status">DEEPSCAN: <span class="active">ACTIVE</span></div>
+        </header>
+
+        <div class="address-bar">
+            <input type="text" id="target-url" placeholder=">> TARGET_URL: TKCLUB2.COM">
+            <button onclick="initiateSniff()">INITIATE SNIFF</button>
+        </div>
+
+        <main>
+            <iframe id="browser-view" src="about:blank"></iframe>
+        </main>
+
+        <div class="dev-panel">
+            <div class="panel-header">
+                <span class="tab active">NETWORK.LOG</span>
+                <span class="tab">CONSOLE.EXE</span>
+                <span class="tab alvi-mode">// ALVI MODE //</span>
+            </div>
+            <div class="log-container">
+                <div id="sniff-status">>> INITIATING DEEPSCAN FOR_EMERD_DATA...</div>
+                <table id="network-table">
+                    <thead>
+                        <tr>
+                            <th>TIME</th>
+                            <th>TARGET API</th>
+                            <th>STATUS</th>
+                            <th>RESULT</th>
+                        </tr>
+                    </thead>
+                    <tbody id="api-rows">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
